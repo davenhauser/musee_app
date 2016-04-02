@@ -1,5 +1,3 @@
-console.log('JS loaded!');
-
 require('dotenv').config();
 
 var request = require('request');
