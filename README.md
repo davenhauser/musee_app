@@ -1,5 +1,4 @@
 # musee_app
 
-:tada:
+A website about art collections.
 
-Enjoy… 

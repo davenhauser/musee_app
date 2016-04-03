@@ -1,15 +1,16 @@
 var express = require('express'),
-    router  = new express.Router();
+     router  = new express.Router();
 
-// Require controllers.
-var pagesController = require('../controllers/pages');
-var usersController = require('../controllers/users');
+ // Require controllers.
+ var usersCtrl = require('../controllers/users');
 
-// root path:
-router.get('/', pagesController.welcome);
+ // Require token authentication.
+ var token = require('../config/token_auth');
 
-// users resource paths:
-router.get('/users',     usersController.index);
-router.get('/users/:id', usersController.show);
+ // users resource paths:
+ router.post('/users',    usersCtrl.create);
+ router.get( '/users/me', token.authenticate, usersCtrl.me);
 
-module.exports = router;
+ router.post('/token',    token.create);
+
+ module.exports = router;
