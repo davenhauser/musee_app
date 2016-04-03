@@ -3,6 +3,7 @@ var express = require('express'),
 
  // Require controllers.
  var usersCtrl = require('../controllers/users');
+ var searchCtrl = require('../controllers/search')
 
  // Require token authentication.
  var token = require('../config/token_auth');
@@ -12,5 +13,7 @@ var express = require('express'),
  router.get( '/users/me', token.authenticate, usersCtrl.me);
 
  router.post('/token',    token.create);
+
+ router.get('/search/art', searchCtrl.getArtWork)
 
  module.exports = router;
