@@ -7,7 +7,7 @@
 
   authService.$inject = ["$log", "tokenService", "$http"];
 
-  function authService($log, tokenService, $http) {
+  function authService($log, token, $http) {
     $log.info("auth service loaded!");
 
     var service = {
@@ -16,7 +16,7 @@
     return service;
 
     function logIn(data) {
-      $http({
+      var promise = $http({
         method: 'POST',
         url:    '/api/token',
         data:   data,
@@ -26,11 +26,12 @@
       })
       .then(
         function(res) {
-          tokenService.store(res.data.token);
-          $log.info("Success:", tokenService.decode());
+          token.store(res.data.token);
+          $log.info("Success:", token.decode());
         },
         function(err) { $log.info("Error:", err); }
       );
+      return promise; //so we can keep chanining on it (in our signin controller)
     }
   }
 
