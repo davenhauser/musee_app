@@ -1,42 +1,40 @@
+
 (function() {
-   "use strict";
+  "use strict";
 
-   angular
-     .module("musee_app")
-     .controller("SignInController", SignInController);
+  angular
+    .module("musee_app")
+    .controller("SignInController", SignInController);
 
-   SignInController.$inject = ["$log", "$http", "$window", "tokenService"];
+  SignInController.$inject = ["$log", "authService", "userService"];
 
-   function SignInController($log, $http, $window, tokenService) {
-     var vm = this;
+  function SignInController($log, authService, userService) {
+    var vm = this;
 
-     // BINDINGS
-     vm.signUp = {
-       email:    "test@email.com",
-       name:     "Tom Hanks",
-       password: "12345",
-       passwordConfirmation: "12345"
-     };
-     vm.submitSignUp = submitSignUp;
+    // BINDINGS
+    vm.signUp = {
+      email:    "test@emaik.com",
+      name:     "Tom Hanks",
+      password: "12345",
+      passwordConfirmation: "12345"
+    };
+    vm.submitSignUp = submitSignUp;
+    vm.logIn = {
+      email:    "pj@ga.co",
+      password: "12345"
+    };
+    vm.submitLogIn = submitLogIn;
 
-     // FUNCTIONS
-     function submitSignUp() {
-       // $log.info(vm.signUp);
+    // FUNCTIONS
+    function submitSignUp() {
+      userService.create(vm.signUp)
+    }
 
-       $http
-         .post('api/users', vm.signUp, {
-           headers: {
-             'Content-Type': 'application/json'
-           }
-         })
-         .then(
-           function(res) {
-             $log.info("Succes:", res);
-             generateToken();
-           },
-           function(err) { $log.info("Error:", err); }
-         );
-     }
+    function submitLogIn() {
+      authService.logIn(vm.logIn);
+    }
+
+    $log.info("SignInController loaded!");
 
      function generateToken() {
        $http

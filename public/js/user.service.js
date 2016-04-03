@@ -5,9 +5,9 @@
     .module('musee_app')
     .factory("userService", userService);
 
-  userService.$inject = ["$log", "authService", "$http"];
+  userService.$inject = ["$log", "$http", "authService"];
 
-  function userService($log, authservice, $http) {
+  function userService($log, $http, authService) {
     $log.info("user service loaded!");
 
     var service = {
@@ -16,7 +16,7 @@
     return service;
 
     function create(data) {
-      var promise = $http({
+      $http({
         method: 'POST',
         url:    '/api/users',
         data:   data,
@@ -24,11 +24,13 @@
           'Content-Type': 'application/json'
         }
       })
-      .then(function(res){
-        authService.logIn(data);
-      });
-
-      return promise;
+      .then(
+        function(res) {
+          // authService.logIn(res.config.data);
+          authService.logIn(data);
+        },
+        function(err) { $log.info("Error:", err); }
+      );
     }
   }
 
