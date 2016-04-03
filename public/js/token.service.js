@@ -2,7 +2,7 @@
      'use strict';
 
      angular
-     .module('app')
+     .module('musee_app')
      .factory("tokenService", tokenService);
 
      tokenService.$inject = ["$log", "$window"];
