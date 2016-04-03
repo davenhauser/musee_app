@@ -1,4 +1,3 @@
-
 (function() {
   "use strict";
 
@@ -27,6 +26,7 @@
     vm.conflict = false;
 
     // FUNCTIONS
+
     function submitSignUp() {
       userService
         .create(vm.signUp)
