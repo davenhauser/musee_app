@@ -9,7 +9,7 @@ var cookieParser = require('cookie-parser');
 // Load local libraries.
 var env      = require('./config/environment'),
     mongoose = require('./config/database'),
-    routes   = require('./config/routes');
+    routes   = require('./routes/api.routes');
 
 // Instantiate a server application.
 var app = express();
@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(debugReq);
 
 // Defines all of our "dynamic" routes.
-app.use('/', routes);
+app.use('/api', routes);
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {

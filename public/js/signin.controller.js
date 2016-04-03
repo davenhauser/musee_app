@@ -24,7 +24,7 @@
        // $log.info(vm.signUp);
 
        $http
-         .post('/api/users', vm.signUp, {
+         .post('api/users', vm.signUp, {
            headers: {
              'Content-Type': 'application/json'
            }

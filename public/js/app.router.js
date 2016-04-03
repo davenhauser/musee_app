@@ -19,6 +19,7 @@
             controllerAs: "vm"
          })
 
+
          $urlRouterProvider.otherwise("/");
      }
  })();
