@@ -7,10 +7,16 @@ var art;
 
 //function getArtWork()
 function getArtWork(req, res, next){
+var baseUri = "http://www.europeana.eu/api/v2/search.json?",
+wsKey = "wskey=" + process.env.key
+
+var uri = baseUri + wsKey;
+uri += "&query=" + encodeURIComponent(req.body.search); //difne input, i.e. picasso
+uri +=  "&thumbnail=true&start=1&rows=100&profile=rich"
 
 request({
   method: "GET",
-  uri: "http://www.europeana.eu/api/v2/search.json?wskey=" + process.env.key + "standard",
+  uri: uri
   }, function (error, response, body) {
       if (!error && response.statusCode == 200) {
         res.send(JSON.parse(response.body));

@@ -10,22 +10,5 @@
   function SearchesController($log, searchService) {
     var vm = this;
     $log.info("this is the searchService", searchService)
-
-    vm.art
-    getArt();
-    vm.searchService = searchService;
-
-
-    function getArt() {
-        searchService
-        .getArt()
-        .then(function(response){
-          vm.art = response;
-          $log.info("new one", response)
-        }, function(error) {
-          $log.error(error);
-        }
-      );
-    }
   }
 })();
