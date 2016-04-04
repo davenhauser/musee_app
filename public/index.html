@@ -21,6 +21,7 @@
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <a class="navbar-brand">Musee Logo</a>
+          <!-- button><a ui-sref="artist"  ui-sref-active="active" class="btn" >Artist</a></button> -->
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
          <button ng-click="vm.authService.logOut();" ng-show="vm.authService.isLoggedIn();" type="button" class="btn btn-default navbar-btn navbar-right">Sign Out</button>
         </div>
@@ -37,9 +38,8 @@
 
   <footer ng-controller="SearchesController as vm">
 
-    {{vm.art[6].country}} {{vm.art[6].title}} {{vm.art[6].edmPreview}}
+    {{vm.art[6].country[0]}} {{vm.art[6].title[0]}} {{vm.art[6].edmPreview}}
 
-    <hr>
     <span>Made with <i class="glyphicon glyphicon-star"></i> in DTLA.</span>
     <br>
     <span>© 2015, WDI</span>
@@ -54,6 +54,8 @@
   <script src="/js/signin.controller.js"></script>
   <script src="/js/navbar.controller.js"></script>
   <script src="/js/searches.controller.js"></script>
+  <script src="/js/app/artist/artist.controller.js"></script>
+
 </body>
 </html>
 
