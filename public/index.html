@@ -30,11 +30,14 @@
     <main class="content" ui-view>
       <!-- ui-router (aka ui.router) inserts templates here -->
 
-      <div ng-controller="SearchesController as vm"></div>
+
+      </div>
     </main>
   </div> <!-- div.container-fluid -->
 
-  <footer>
+  <footer ng-controller="SearchesController as vm">
+
+  {{3+5}}
     <hr>
     <span>Made with <i class="glyphicon glyphicon-star"></i> in DTLA.</span>
     <br>

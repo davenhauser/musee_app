@@ -11,10 +11,10 @@ function getArtWork(req, res, next){
 request({
   method: "GET",
   uri: "http://www.europeana.eu/api/v2/search.json?wskey=" + process.env.key + "standard",
-}, function (error, response, body) {
+  }, function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        var art = JSON.parse(response.body).items[0];
-        console.log(art);
+        res.send(JSON.parse(response.body));
+        // var art = JSON.parse(response.body).items[0];
         } else if (error) {
         next(error);
           } else {
@@ -26,7 +26,7 @@ request({
     });
 }
 
-getArtWork();
+// getArtWork();
 
 module.exports = {
 getArtWork: getArtWork

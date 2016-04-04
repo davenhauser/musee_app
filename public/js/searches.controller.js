@@ -5,24 +5,28 @@
     .module("musee_app")
     .controller("SearchesController", SearchesController);
 
-  SearchesController.$inject = ["$log"];
+  SearchesController.$inject = ["$log", "searchService"];
 
-  function SearchesController($log) {
+  function SearchesController($log, searchService) {
     var vm = this;
+    $log.info("this is the searchService", searchService)
 
-    vm.art ;
-    // getArt();
+    // vm.artCountry = {
+    //   country: searchService
+    // } ;
+    getArt();
+    vm.searchService = searchService;
 
-    // function getArt() {
+    function getArt() {
+        searchService
+        .getArt()
+        .then(function(response){
 
-        // .getArt()
-        // .then(function(response){
-
-        // vm.art = response;
-        // }, function(error) {
-        //   $log.error(error);
-        // }
-      // );
-    // }
+        vm.art = response;
+        }, function(error) {
+          $log.error(error);
+        }
+      );
+    }
   }
 })();
