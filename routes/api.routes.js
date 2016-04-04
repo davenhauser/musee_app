@@ -14,6 +14,6 @@ var express = require('express'),
 
  router.post('/token',    token.create);
 
- router.get('/search/art', searchCtrl.getArtWork)
+ router.get('/searches/art', searchCtrl.getArtWork)
 
  module.exports = router;
