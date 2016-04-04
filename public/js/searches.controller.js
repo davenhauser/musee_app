@@ -14,7 +14,6 @@
     vm.art
     getArt();
     vm.searchService = searchService;
-    $log.info("does this work?: ", searchService.art)
 
 
     function getArt() {

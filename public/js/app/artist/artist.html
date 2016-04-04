@@ -9,5 +9,15 @@
 </head>
 <body>
 
+  <div ng-repeat = "piece in vm.art">
+   <span> Title: {{piece.title[0]}}  </span> <br>
+   <span>Country: {{piece.country[0]}} </span> <br>
+   <img ng-src="{{piece.edmPreview[0]}}">
+
+    <hr>
+  </div>
+
+
+
 </body>
 </html>
