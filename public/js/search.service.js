@@ -10,6 +10,9 @@
     function searchService($log, $http, $state){
       $log.info("searchService loaded!")
 
+      var vm = this;
+
+      vm.data = searchService
       var service = {
         getArt: getArt
       };
@@ -23,8 +26,9 @@
         data:  data
       })
       .then(function(res){
-        $log.info(res.data.items[0].country[0]);
-        return res.data.items[0];
+        $log.info("Test ",res.data.items[0]);
+        // $log.info("Country ",res.data.items[0].country[0]);
+        return res.data.items;
       });
       return art;
     }
