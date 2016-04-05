@@ -2,10 +2,12 @@ var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
 var searchSchema = new mongoose.Schema({
-  artworkName: { type: String, required: true, unique: true },
-  country:  { type: String, required: true },
-  artist:   { type: String, required: true },
-  imageUrl:   { type: String, default: "/images/notfound.gif" }
+  term:   { type: String, required: true }
+  // artworkName: { type: String, required: true, unique: true },
+  // country:  { type: String, required: true },
+  // artist:   { type: String, required: true },
+  // imageUrl:   { type: String, default: "/images/notfound.gif" }
+
 });
 
 // add bcrypt hashing to model (works on a password field)!

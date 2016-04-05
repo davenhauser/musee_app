@@ -11,15 +11,16 @@
     var vm = this;
     $log.info("this is the searchService", searchService)
 
-    vm.art
-    getArt();
+    // vm.art
+    // getArt();
     vm.searchService = searchService;
-    $log.info("does this work?: ", searchService.art)
 
-
-    function getArt() {
+    vm.getArt = function() {
+      console.log(vm.search.title);
+      console.log("check getArt function");
+       var title = vm.search.title;
         searchService
-        .getArt()
+        .search(title)
         .then(function(response){
           vm.art = response;
           $log.info("new one", response)

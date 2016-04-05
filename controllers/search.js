@@ -8,10 +8,11 @@ var art;
 //function getArtWork()
 function getArtWork(req, res, next){
 var baseUri = "http://www.europeana.eu/api/v2/search.json?",
-wsKey = "wskey=" + process.env.key
+wsKey = "wskey=" + process.env.key;
 
 var uri = baseUri + wsKey;
-uri += "&query=" + encodeURIComponent(req.body.search); //difne input, i.e. picasso
+uri += "&query=" + req.query.title; //difne input, i.e. picasso
+console.log("gotta make this work", req.query.title)
 uri +=  "&thumbnail=true&start=1&rows=100&profile=rich"
 
 request({
@@ -26,7 +27,7 @@ request({
           } else {
             var errObject = {
           message: "Unknown status code",
-          status:  response.statusCode,
+          status:  response.statusCode
         }
       }
     });

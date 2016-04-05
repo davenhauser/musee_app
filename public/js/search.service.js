@@ -14,19 +14,20 @@
 
       vm.data = searchService
       var service = {
-        getArt: getArt
+        search: search
       };
 
       return service
 
-      function getArt(data){
+      function search(data){
+        console.log(data);
         var art = $http({
         method: "GET",
-        url: "api/searches/art",
+        url: "api/searches/art?title=" + data,
         data:  data
       })
       .then(function(res){
-        $log.info("Test ",res.data.items[0]);
+        $log.info("Search Test ",res.data.items[0]);
         // $log.info("Country ",res.data.items[0].country[0]);
         return res.data.items;
       });

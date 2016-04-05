@@ -9,6 +9,10 @@
 </head>
 <body>
 
+<input ng-model="vm.search.title" placeholder="Artist name">
+</input>
+<button ng-click="vm.getArt()" type="submit" class="form-submit btn btn-primary">Search</button>
+
   <div ng-repeat = "piece in vm.art">
    <span> Title: {{piece.title[0]}}  </span> <br>
    <span>Country: {{piece.country[0]}} </span> <br>
@@ -16,7 +20,6 @@
 
     <hr>
   </div>
-
 
 
 </body>
