@@ -9,17 +9,21 @@
 </head>
 <body>
 
-<input ng-model="vm.search.title" placeholder="Artist name">
-</input>
+<input ng-model="vm.search.title" placeholder="Artist name"></input>
 <button ng-click="vm.getArt()" type="submit" class="form-submit btn btn-primary">Search</button>
+<br>
 
-  <div ng-repeat = "piece in vm.art">
-   <span> Title: {{piece.title[0]}}  </span> <br>
+  <div class="image-container">
+  <span ng-repeat = "piece in vm.art" class="artistimage">
+ <!--   <span> Title: {{piece.title[0]}}  </span> <br> -->
    <span>Country: {{piece.country[0]}} </span> <br>
+   <div>Artist: {{piece.dcCreator[0]}}</span> <br>
    <img ng-src="{{piece.edmPreview[0]}}">
 
-    <hr>
+  <!--   <hr> -->
+  </span>
   </div>
+
 
 
 </body>

@@ -5,9 +5,9 @@
     .module('musee_app')
     .controller('ArtistController', ArtistController)
 
-    ArtistController.$inject = ["$log", "searchService"];
+    ArtistController.$inject = ["$log", "searchService", "$state"];
 
-    function ArtistController($log, searchService){
+    function ArtistController($log, searchService, $state){
     var vm = this;
     $log.info("this is the searchService", searchService)
 
@@ -19,6 +19,7 @@
       console.log(vm.search.title);
       console.log("check getArt function");
        var title = vm.search.title;
+       $state.go("artist");
         searchService
         .search(title)
         .then(function(response){

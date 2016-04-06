@@ -22,12 +22,18 @@
     <header ng-controller="NavbarController as vm">
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-          <a class="navbar-brand">Musee Logo</a>
+          <a ui-sref="welcome"  ui-sref-active="active"class="navbar-brand">Musee Logo</a>
+          <a ui-sref="artist"  ui-sref-active="active"class="navbar-brand">Artist</a>
+
           <!-- button><a ui-sref="artist"  ui-sref-active="active" class="btn" >Artist</a></button> -->
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
-         <button ng-click="vm.authService.logOut();" ng-show="vm.authService.isLoggedIn();" type="button" class="btn btn-default navbar-btn navbar-right">Sign Out</button>
+          <button ng-click="vm.authService.logOut();" ng-show="vm.authService.isLoggedIn();" type="button" class="btn btn-default navbar-btn navbar-right">Sign Out</button>
+        <input ng-model="vm.search.title" ng-show="vm.authService.isLoggedIn();" placeholder="Artist name"> </input>
+        <button ng-click="vm.getArt()" ng-show="vm.authService.isLoggedIn();" type="submit" class="form-submit btn btn-primary">Search</button>
+
         </div>
       </nav>
+
     </header>
 
     <main class="content" ui-view>

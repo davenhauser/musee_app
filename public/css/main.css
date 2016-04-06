@@ -81,12 +81,11 @@ form {
     max-height: auto;*/
 
  span img{
-  height: 100%;
-  width: auto;
-  padding: 10px;
-  height: 200px;
-  width: 200px;
+  margin: 20px;
+  max-height: 200px;
+  max-width: 200px;
   border: 2px solid black;
 }
+
 
 

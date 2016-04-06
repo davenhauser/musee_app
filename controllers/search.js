@@ -12,7 +12,6 @@ wsKey = "wskey=" + process.env.key;
 
 var uri = baseUri + wsKey;
 uri += "&query=" + req.query.title; //difne input, i.e. picasso
-console.log("gotta make this work", req.query.title)
 uri +=  "&thumbnail=true&start=1&rows=100&profile=rich"
 
 request({
