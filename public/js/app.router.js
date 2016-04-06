@@ -18,11 +18,17 @@
             controller: "SignInController",
             controllerAs: "vm"
          })
-        .state('artist', {
-          url:            '/artist',
-          templateUrl:    '/js/app/artist/artist.html',
-          controller:     'ArtistController',
-          controllerAs:   'vm',
+      //   .state('artist', {
+      //     url:            '/artist',
+      //     templateUrl:    '/js/app/artist/artist.html',
+      //     controller:     'ArtistController',
+      //     controllerAs:   'vm',
+      // })
+        .state("artWork", {
+        url: "/searches",
+        templateUrl: "/js/app/artist/artist.html",
+        controller: "SearchesController",
+        controllerAs: "vm"
       });
 
 

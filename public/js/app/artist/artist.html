@@ -13,18 +13,15 @@
 <button ng-click="vm.getArt()" type="submit" class="form-submit btn btn-primary">Search</button>
 <br>
 
-  <div class="image-container">
-  <span ng-repeat = "piece in vm.art" class="artistimage">
- <!--   <span> Title: {{piece.title[0]}}  </span> <br> -->
-   <span>Country: {{piece.country[0]}} </span> <br>
-   <div>Artist: {{piece.dcCreator[0]}}</span> <br>
-   <img ng-src="{{piece.edmPreview[0]}}">
+ <div class="image-container">
 
-  <!--   <hr> -->
-  </span>
+ <span ng-repeat="art in vm.getArtWork" class="fish-li">
+   {{art.author}} <br>
+   {{art.location}} <br>
+   <img ng-src="{{art.image_url}}"</span>
+
+ </span>
   </div>
-
-
 
 </body>
 </html>

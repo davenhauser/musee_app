@@ -14,6 +14,13 @@ var express = require('express'),
 
  router.post('/token',    token.create);
 
- router.get('/searches/art', searchCtrl.getArtWork)
+ // router.get('/searches/art', searchCtrl.getArtWork)
+
+ //||||||||||||||||||||||||||--
+// ARTWORK CRUD SERVICES
+//||||||||||||||||||||||||||--
+router.get('/searches',   searchCtrl.artIndex);
+// router.get('/searches/:id',     searchCtrl.artShow);
+
 
  module.exports = router;

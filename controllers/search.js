@@ -5,37 +5,34 @@ var request = require('request');
 
 var art;
 
-//function getArtWork()
-function getArtWork(req, res, next){
-var baseUri = "http://www.europeana.eu/api/v2/search.json?",
-wsKey = "wskey=" + process.env.key;
+//||||||||||||||||||||||||||--
+// GET ARTWORK
+//||||||||||||||||||||||||||--
 
-var uri = baseUri + wsKey;
-uri += "&query=" + req.query.title; //difne input, i.e. picasso
-uri +=  "&thumbnail=true&start=1&rows=100&profile=rich"
+// var artShow = function(req, res, next){
+//   var id = req.params.id;
 
-request({
-  method: "GET",
-  uri: uri
-  }, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        res.send(JSON.parse(response.body));
-        // var art = JSON.parse(response.body).items[0];
-        } else if (error) {
-        next(error);
-          } else {
-            var errObject = {
-          message: "Unknown status code",
-          status:  response.statusCode
-        }
-      }
-    });
+//   Search.findById(id, function(err, arts){
+//     if (err) {
+//       res.send(err);
+//     }
+//     // return that art as JSON
+//     res.json(arts);
+//   });
+// };
+
+var artIndex = function(req, res) {
+  Search.find({}, function(err, arts) {
+    if (err) {
+      res.send("This is the error from search.js",err);
+    }
+    // return the art
+    res.json(arts);
+    console.log("first test", arts)
+  });
 }
-
-// getArtWork();
-
 module.exports = {
-getArtWork: getArtWork
+artIndex: artIndex
 }
 
 
