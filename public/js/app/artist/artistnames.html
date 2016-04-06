@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Artist</title>
   <link rel="stylesheet" href="">
-  <h1> Artist Display </h1>
+  <h1> Artist Names </h1>
 </head>
 <body>
 
@@ -20,17 +20,14 @@
     <div class="col-md-10">
       <!--Body content-->
 
-      <ul ng-repeat="art in vm.getArtWork | filter: 'monet, claude' | filter:query ">
-      <li>{{art.author}} <br> </li>
-      <li> {{art.location}} <br> </li>
-      <li> <img ng-src="{{art.image_url}}"</li>
-    </ul>
+      <div ng-repeat="art in vm.getArtWork | unique:'author' | filter:query">
+      <span>{{art.author}} </span><br>
+    </div>
 
     </div>
   </div>
 </div>
 
-  </div>
 
 </body>
 </html>

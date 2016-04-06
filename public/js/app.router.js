@@ -24,9 +24,15 @@
       //     controller:     'ArtistController',
       //     controllerAs:   'vm',
       // })
-        .state("artWork", {
+        .state("artwork", {
         url: "/searches",
         templateUrl: "/js/app/artist/artist.html",
+        controller: "SearchesController",
+        controllerAs: "vm"
+      })
+        .state("artistnames", {
+        url: "/artist_names",
+        templateUrl: "/js/app/artist/artistnames.html",
         controller: "SearchesController",
         controllerAs: "vm"
       });

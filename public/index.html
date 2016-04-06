@@ -6,14 +6,16 @@
 
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
+   <link rel="stylesheet" type="text/css" href="/css/animations.css">
 <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
- -->
+
 
   <!-- If you must use outside libs that aren't Angular-specific, include them BEFORE Angular. -->
   <script src="/js/jwt-decode.2.0.1.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
+  <script src="https://code.angularjs.org/1.5.3/angular-animate.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
 
 </head>
@@ -23,7 +25,10 @@
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <a ui-sref="welcome"  ui-sref-active="active"class="navbar-brand">Musee Logo</a>
-          <a ui-sref="artist"  ui-sref-active="active"class="navbar-brand">Artist</a>
+          <a ui-sref="artwork"  ui-sref-active="active"class="navbar-brand">Artwork</a>
+          <a ui-sref="artistnames"  ui-sref-active="active"class="navbar-brand">List of Artists</a>
+
+
 
           <!-- button><a ui-sref="artist"  ui-sref-active="active" class="btn" >Artist</a></button> -->
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
@@ -57,6 +62,8 @@
   <script src="/js/navbar.controller.js"></script>
   <script src="/js/searches.controller.js"></script>
   <script src="/js/app/artist/artist.controller.js"></script>
+  <script src="/js/app/search.filter.js"></script>
+
 
 </body>
 </html>
