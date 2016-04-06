@@ -19,19 +19,15 @@
 
       return service
 
-      function search(data){
-        console.log(data);
-        var art = $http({
-        method: "GET",
-        url: "api/searches/art?title=" + data,
-        data:  data
-      })
-      .then(function(res){
-        $log.info("Search Test ",res.data.items[0]);
-        // $log.info("Country ",res.data.items[0].country[0]);
-        return res.data.items;
+    function search(author) {
+      var art = $http.get('api/searches?author=' + author)
+      .then(function(res) {
+        $log.info("Search Test ", res.data);
+        // $log.info("Author: ",res.data[0].author);
+        return res.data;
       });
       return art;
     }
+
       }
 })();

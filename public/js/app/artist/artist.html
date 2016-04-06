@@ -9,6 +9,9 @@
 </head>
 <body>
 
+<input ng-model="vm.search.author" placeholder="Artist name">
+</input>
+<button ng-click="vm.getArt()" type="submit" class="form-submit btn btn-primary">Search</button>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2">
@@ -20,10 +23,16 @@
     <div class="col-md-10">
       <!--Body content-->
 
-      <ul ng-repeat="art in vm.getArtWork | filter: 'monet, claude' | filter:query ">
+      <!-- <ul ng-repeat="art in vm.getArtWork | filter: 'monet, claude' | filter:query ">
       <li>{{art.author}} <br> </li>
       <li> {{art.location}} <br> </li>
       <li> <img ng-src="{{art.image_url}}"</li>
+    </ul> -->
+
+    <ul ng-repeat="artist in vm.art">
+  <!--     <li>{{art[0].author}} <br> </li> -->
+      <li> {{3+4}} <br> </li>
+      <li> <img ng-src="{{artist.image_url}}"></li>
     </ul>
 
     </div>

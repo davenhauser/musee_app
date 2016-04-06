@@ -2,9 +2,9 @@ var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
 var searchSchema = new mongoose.Schema({
-  author:    String,
+  author:    {type: String, index: true},
   borndied:  String,
-  title:     String,
+  title:     {type: String, index: true},
   date:      String,
   technique: String,
   location:  String,

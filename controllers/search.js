@@ -22,7 +22,14 @@ var art;
 // };
 
 var artIndex = function(req, res) {
-  Search.find({}, function(err, arts) {
+  var query = {};
+  if (req.query.author) {
+    query = {
+      author: new RegExp(req.query.author, "i")
+    };
+  }
+
+  Search.find(query, function(err, arts) {
     if (err) {
       res.send("This is the error from search.js",err);
     }
