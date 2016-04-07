@@ -9,16 +9,16 @@
 
 /*Animate route changes*/
 
-[ui-view].ng-enter {
+/*[ui-view].ng-enter {
   transition: all 5s ease;
   opacity: 0;
 }
 [ui-view].ng-enter-active {
   opacity: 1;
-}
+}*/
 
 /*Animate the ng-repeat*/
-
+/*
 @keyframes appear {
   from {
     opacity: 0;
@@ -62,4 +62,5 @@
 }
 .panel.ng-move-active {
   animation: 0.8s grow;
-*/*/
+*/
+

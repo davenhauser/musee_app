@@ -6,6 +6,8 @@
 
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
+ <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
+
    <link rel="stylesheet" type="text/css" href="/css/animations.css">
 <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 
@@ -25,7 +27,7 @@
     <header ng-controller="NavbarController as vm">
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-          <a ui-sref="welcome"  ui-sref-active="active"class="navbar-brand">Musee Logo</a>
+          <a ui-sref="welcome"  ui-sref-active="active"class="navbar-brand">Musee</a>
           <a ui-sref="artwork"  ui-sref-active="active"class="navbar-brand">Artwork</a>
           <a ui-sref="artistnames"  ui-sref-active="active"class="navbar-brand">List of Artists</a>
 
@@ -34,8 +36,8 @@
           <!-- button><a ui-sref="artist"  ui-sref-active="active" class="btn" >Artist</a></button> -->
           <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
           <button ng-click="vm.authService.logOut();" ng-show="vm.authService.isLoggedIn();" type="button" class="btn btn-default navbar-btn navbar-right">Sign Out</button>
-        <input ng-model="vm.search.title" ng-show="vm.authService.isLoggedIn();" placeholder="Artist name"> </input>
-        <button ng-click="vm.getArt()" ng-show="vm.authService.isLoggedIn();" type="submit" class="form-submit btn btn-primary">Search</button>
+<!--          <br><input ng-model="vm.search.title" ng-show="vm.authService.isLoggedIn();" placeholder="Artist name"> </input>
+         <button ng-click="vm.getArt()" ng-show="vm.authService.isLoggedIn();" type="submit" class="form-submit btn btn-primary">Search</button> -->
 
         </div>
       </nav>

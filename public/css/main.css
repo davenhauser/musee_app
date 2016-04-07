@@ -11,16 +11,22 @@
   display: none !important;
 }
 
+.navbar-default {
+    background-color: #F8F8F8;
+    border-bottom: 3px solid black;
+}
+
 html {
   position: relative;
   min-height: 100%;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Gravitas One';
   font-size: 18px;
   margin: auto 1rem 60px;
   padding-top: 70px;
+  background-color: #F8F8F8;
 }
 
 a {
@@ -75,17 +81,28 @@ form {
   justify-content: center;
 }
 
- /* span:nth-child(2n) {
+/*  span:nth-child(2n) {
     border: 10px solid green;
     max-width:  100px;
-    max-height: auto;*/
+    max-height: auto;
 
  span img{
   margin: 20px;
   max-height: 200px;
   max-width: 200px;
   border: 2px solid black;
+}*/
+
+ img{
+  width: 300px;
+  height: 300px;
+  margin: 2px;
+  border: 2px solid;
 }
 
+span img:hover {
+  -webkit-filter: grayscale(100%);
+  border: none;
+}
 
 

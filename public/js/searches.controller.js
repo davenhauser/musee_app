@@ -16,7 +16,7 @@
 
     vm.arts = [];
 
-    getArtWork();
+    // getArtWork();
 
 
     function getArtWork() {
