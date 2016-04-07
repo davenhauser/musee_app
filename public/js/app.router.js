@@ -35,6 +35,12 @@
         templateUrl: "/js/app/artist/artistnames.html",
         controller: "SearchesController",
         controllerAs: "vm"
+      })
+         .state("test", {
+        url: "/test",
+        templateUrl: "/js/app/artist/test.html",
+        controller: "SearchesController",
+        controllerAs: "vm"
       });
 
 

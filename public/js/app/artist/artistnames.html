@@ -18,15 +18,15 @@
     <button ng-click="vm.getArt()" type="submit" class="form-submit btn btn-primary">Search</button>
 
 <div ng-repeat="art in vm.artWork | unique:'author'">
-     <span>{{art.author}} </span><br>
+    <!--  <button ng-click="vm.query = " type="submit" class="form-submit btn btn-primary">{{art.author}} </button><br> -->
 
     </div>
     <div class="col-md-10">
       <!--Body content-->
 
-    <div ng-repeat="art in vm.artWork | unique:'author' | filter:query">
+    <!-- <div ng-repeat="art in vm.artWork | unique:'author' | filter:query">
       <span> <img ng-src="{{::art.image_url}}"> </span>
-    </div>
+    </div> -->
 
     </div>
   </div>

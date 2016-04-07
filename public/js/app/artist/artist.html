@@ -1,32 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Artist</title>
-  <link rel="stylesheet" href="">
-  <h1> Artist Display </h1>
-</head>
-<body>
 
-<div class="container-fluid">
+<div class="container-fluid" ng-show="vm.currentArtist.author === undefined">
+  <h1> Artwork Display </h1>
   <div class="row">
     <div class="col-md-2">
       <!--Sidebar content-->
 
-    <input ng-model="vm.query">
-    <button ng-click="vm.getArt()" type="submit" class="form-submit btn btn-primary">Search Letter</button>
+      <input ng-model="vm.query">
+      <button ng-click="vm.getArt()" type="submit" class="btn btn-xs btn-default">Search Artist <span class="glyphicon glyphicon-picture"></span></button>
 
-<div ng-repeat="art in vm.artWork | unique:'author'">
-     <span>{{art.author}} </span><br>
+      <div ng-repeat="art in vm.artWork | unique:'author'">
 
-    </div>
-    <div class="col-md-10">
-      <!--Body content-->
+      <ul style="list-style-type:none">
+        <li ng-click="vm.setArtist(art.author)">{{art.author}}</li><br>
+      </ul>
+      </div>
+      <div class="col-md-10">
+        <!--Body content-->
 
+      </div>
     </div>
   </div>
 </div>
 
-</body>
-</html>
+<div class="container-fluid" ng-hide="vm.currentArtist.author === undefined">
+  <h1>{{vm.currentArtist.author}}</h1>
+
+    <button ng-click="vm.clearArtist()">Back to Search</button>
+    <div  class="art-container">
+      <div ng-repeat="art in vm.currentArtist.art">
+
+        <span class= "artwrap">
+          <img class="artimg" ng-src="{{art.image_url}}">
+        </span>
+        <br>
+      </div>
+    </div>
+
+</div>

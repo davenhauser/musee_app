@@ -10,7 +10,12 @@
     function searchService($log, $http, $state){
       $log.info("searchService loaded!")
 
-      var vm = this;
+      var vm = {};
+
+      vm.currentArtist = {
+        author: undefined,
+        works: []
+      };
 
       vm.data = searchService
       var service = {
@@ -28,6 +33,7 @@
       });
       return art;
     }
+    return vm;
 
       }
 })();

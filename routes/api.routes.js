@@ -20,6 +20,7 @@ var express = require('express'),
 // ARTWORK CRUD SERVICES
 //||||||||||||||||||||||||||--
 router.get('/searches',   searchCtrl.artIndex);
+router.post('/artists',   searchCtrl.artistShow);
 // router.get('/searches/:id',     searchCtrl.artShow);
 
 

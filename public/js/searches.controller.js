@@ -15,6 +15,31 @@
     $log.info("this is the searchService", searchService)
 
     vm.arts = [];
+    vm.currentArtist = {
+      author: undefined,
+      art: []
+    };
+
+    vm.setArtist = function(artistName) {
+      // vm.currentArtist.author = artistName;
+      // console.log(vm.currentArtist);
+      vm.currentArtist.author = artistName;
+      $http.post('/api/artists', {author: artistName})
+           .then(function(res){
+            vm.currentArtist.art = res.data;
+           }, function(err){
+            $log.info(err);
+           })
+    }
+
+    vm.clearArtist = function() {
+      vm.currentArtist = {
+        author: undefined,
+        art: []
+      };
+      vm.query = undefined;
+      vm.artWork = [];
+    }
 
     // getArtWork();
 
@@ -43,6 +68,12 @@
     vm.searchService = searchService;
 
     vm.getArt = getArt;
+
+    // function test() {
+    //   console.log("test1: ",vm.query);
+    //   console.log("test2: ",vm.author);
+    //   vm.artWork = vm.query
+    // }
 
      function getArt() {
       console.log("vm.search: ",vm.query);
