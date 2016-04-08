@@ -1,4 +1,3 @@
-require('dotenv').config();
 var Search = require("../models/search");
 
 var request = require('request');
