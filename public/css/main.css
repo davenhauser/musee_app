@@ -151,13 +151,13 @@ span img:hover {
 }
 
 .btn-primary {
-  color: #F8F8F8;
-  background-color: #F8F8F8;
+  background-color: transparent;
   border-color: black;
-  color: black;
+  color: white;
 }
 
 .frame {
-  border: 2px groove black;
+  border: 1px solid none;
   margin: 2px;
+  padding: 5px;
 }

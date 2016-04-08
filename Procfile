@@ -1,1 +1,1 @@
-web: node app/bin/www
+web: node musee_app/bin/www
