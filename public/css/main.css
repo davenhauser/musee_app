@@ -150,12 +150,6 @@ span img:hover {
   color: white;
 }
 
-.btn-primary {
-  background-color: transparent;
-  border-color: black;
-  color: white;
-}
-
 .frame {
   border: 1px solid none;
   margin: 2px;

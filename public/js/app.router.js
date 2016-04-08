@@ -14,7 +14,7 @@
          })
          .state('signin', {
             url: "/signin",
-            templateUrl: "/js/signin.html",
+            templateUrl: "/js/app/auth/signin.html",
             controller: "SignInController",
             controllerAs: "vm"
          })

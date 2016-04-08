@@ -1,13 +1,13 @@
 
 <div class="container-fluid" ng-show="vm.currentArtist.author === undefined">
-  <h1 class="title"> Artwork Display </h1>
+  <h1 class="title"> Artist Search  </h1>
   <div class="row">
    <!--  <div class="col-md-6"> -->
       <!--Sidebar content-->
 <div class="search-container">
 
       <input ng-model="vm.query">
-      <button ng-click="vm.getArt()" type="submit" class="btn btn-xs btn-default">Search Artist <span class="glyphicon glyphicon-picture"></span></button>
+      <button ng-click="vm.getArt()" type="submit" class="btn btn-xs btn-default">Search an artist!<span class="glyphicon glyphicon-picture"></span></button><br><br>
 
       <div ng-repeat="art in vm.artWork | unique:'author'">
 
@@ -26,9 +26,9 @@
 </div>
 
 <div class="container-fluid" ng-hide="vm.currentArtist.author === undefined">
-  <h1 class="title">{{vm.currentArtist.author}}</h1>
+  <h1 class="title">{{vm.currentArtist.author}}</h1> <br>
 
-    <button ng-click="vm.clearArtist()" class="btn btn-primary btn-md outline">Back to Search</button> <br>
+    <button ng-click="vm.clearArtist()" class="btn btn-md btn-default">Back to Search</button> <br><br>
     <div  class="art-container">
       <div ng-repeat="art in vm.currentArtist.art">
 
