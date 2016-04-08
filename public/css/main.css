@@ -26,11 +26,16 @@ html {
 }
 
 body {
-  font-family: 'Arial';
+  font-family: 'Tinos', serif;
   font-size: 18px;
   margin: auto 1rem 60px;
   padding-top: 70px;
   background-color: #F8F8F8;
+  color: white;
+}
+
+input{
+  color: grey;
 }
 
 a {
@@ -67,6 +72,7 @@ footer {
 
 header {
   text-transform: uppercase;
+  color: gray;
 }
 
 form {
@@ -106,7 +112,8 @@ form {
   width: 300px;
   height: 300px;
   margin: 2px;
-  border: 2px solid;
+  border: 2px ridge black;
+
 }
 
 span img:hover {
@@ -120,3 +127,37 @@ span img:hover {
   justify-content: center;
 }
 
+.artistlist{
+}
+
+.search-container{
+ /* flex-direction: row;*/
+  justify-content: center;
+}
+
+.artistpage {
+  background-image: url("https://pixabay.com/static/uploads/photo/2015/10/17/17/14/background-992850_960_720.png");
+  width: 100%;
+  height: auto;
+}
+
+.searchwrap{
+}
+
+.title {
+  font-family: 'Dancing Script', strong;
+  font-size: 40px;
+  color: white;
+}
+
+.btn-primary {
+  color: #F8F8F8;
+  background-color: #F8F8F8;
+  border-color: black;
+  color: black;
+}
+
+.frame {
+  border: 2px groove black;
+  margin: 2px;
+}

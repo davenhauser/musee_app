@@ -1,20 +1,23 @@
 
 <div class="container-fluid" ng-show="vm.currentArtist.author === undefined">
-  <h1> Artwork Display </h1>
+  <h1 class="title"> Artwork Display </h1>
   <div class="row">
-    <div class="col-md-2">
+   <!--  <div class="col-md-6"> -->
       <!--Sidebar content-->
+<div class="search-container">
 
       <input ng-model="vm.query">
       <button ng-click="vm.getArt()" type="submit" class="btn btn-xs btn-default">Search Artist <span class="glyphicon glyphicon-picture"></span></button>
 
       <div ng-repeat="art in vm.artWork | unique:'author'">
 
-      <ul style="list-style-type:none">
+      <ul style="list-style-type:none" class="artistlist">
         <li ng-click="vm.setArtist(art.author)">{{art.author}}</li><br>
       </ul>
       </div>
+
       <div class="col-md-10">
+
         <!--Body content-->
 
       </div>
@@ -23,17 +26,20 @@
 </div>
 
 <div class="container-fluid" ng-hide="vm.currentArtist.author === undefined">
-  <h1>{{vm.currentArtist.author}}</h1>
+  <h1 class="title">{{vm.currentArtist.author}}</h1>
 
-    <button ng-click="vm.clearArtist()">Back to Search</button>
+    <button ng-click="vm.clearArtist()" class="btn btn-primary btn-xs outline">Back to Search</button>
     <div  class="art-container">
       <div ng-repeat="art in vm.currentArtist.art">
 
         <span class= "artwrap">
+        <div class="frame">
           <img class="artimg" ng-src="{{art.image_url}}">
+          </div>
         </span>
         <br>
       </div>
     </div>
+
 
 </div>

@@ -7,7 +7,7 @@
 
   userService.$inject = ["$log", "authService", "$http"];
 
-  function userService($log, authservice, $http) {
+  function userService($log, authService, $http) {
     $log.info("user service loaded!");
 
     var service = {

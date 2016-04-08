@@ -9,13 +9,14 @@
 
 /*Animate route changes*/
 
-/*[ui-view].ng-enter {
-  transition: all 5s ease;
+[ui-view].ng-enter {
+  transition: all 1s ease;
   opacity: 0;
 }
 [ui-view].ng-enter-active {
   opacity: 1;
-}*/
+}
+
 
 /*Animate the ng-repeat*/
 /*

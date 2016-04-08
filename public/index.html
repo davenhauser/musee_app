@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html ng-app="musee_app">
 <head>
-  <title>Auth App</title>
+  <title>Musee</title>
   <meta charset="utf-8">
 
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
  <link href='https://fonts.googleapis.com/css?family=Gravitas+One' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Tinos:400,700' rel='stylesheet' type='text/css'>
 
    <link rel="stylesheet" type="text/css" href="/css/animations.css">
 <!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
@@ -18,17 +20,17 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
-  <script src="https://code.angularjs.org/1.5.3/angular-animate.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.5/angular-animate.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
 
 </head>
-<body>
+<body class="artistpage">
   <div class="container-fluid">
     <header ng-controller="NavbarController as vm">
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-          <a id="logo" ui-sref="welcome"  ui-sref-active="active"class="navbar-brand">Musee</a>
-          <a ui-sref="artwork"  ui-sref-active="active"class="navbar-brand">Artwork</a>
+          <a id="logo" ui-sref="welcome"  ui-sref-active="active" class="navbar-brand">Musee</a>
+          <a ui-sref="artwork"  ui-sref-active="active" class="navbar-brand">Artwork</a>
          <!--  <a ui-sref="artistnames"  ui-sref-active="active"class="navbar-brand">List of Artists</a> -->
 
 
@@ -49,7 +51,7 @@
     </main>
   </div> <!-- div.container-fluid -->
 
-  <footer ng-controller="SearchesController as vm">
+  <footer>
 
     <span>© 2016, David Niederhauser</span>
 

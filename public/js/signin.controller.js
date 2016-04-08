@@ -11,12 +11,6 @@
     var vm = this;
 
     // BINDINGS
-    vm.signUp = {
-      email:    "pj@ga.co",
-      name:     "Philip Hughes",
-      password: "12345",
-      passwordConfirmation: "12345"
-    };
     vm.submitSignUp = submitSignUp;
     vm.logIn = {
       email:    "pj@ga.co",
@@ -28,11 +22,15 @@
     // FUNCTIONS
 
     function submitSignUp() {
+      vm.signUp = {
+        email:    vm.email,
+        name:     vm.name,
+        password: vm.password,
+        passwordConfirmation: vm.passwordConfirmation
+      };
+      console.log("vm.signUp",vm.signUp)
       userService
         .create(vm.signUp)
-        .then(function(res) {
-          return authService.logIn(vm.signUp);
-        })
         .then(
           // on success
           function(decodedToken) {
