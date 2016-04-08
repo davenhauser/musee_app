@@ -18,31 +18,12 @@
             controller: "SignInController",
             controllerAs: "vm"
          })
-      //   .state('artist', {
-      //     url:            '/artist',
-      //     templateUrl:    '/js/app/artist/artist.html',
-      //     controller:     'ArtistController',
-      //     controllerAs:   'vm',
-      // })
         .state("artwork", {
         url: "/searches",
-        templateUrl: "/js/app/artist/artist.html",
-        controller: "SearchesController",
-        controllerAs: "vm"
-      })
-        .state("artistnames", {
-        url: "/artist_names",
-        templateUrl: "/js/app/artist/artistnames.html",
-        controller: "SearchesController",
-        controllerAs: "vm"
-      })
-         .state("test", {
-        url: "/test",
-        templateUrl: "/js/app/artist/test.html",
+        templateUrl: "/js/app/artists/artists.html",
         controller: "SearchesController",
         controllerAs: "vm"
       });
-
 
          $urlRouterProvider.otherwise("/");
      }
